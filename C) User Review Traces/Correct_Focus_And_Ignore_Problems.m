@@ -17,10 +17,11 @@ function [CurrTrace,CurrTimeVector,VectorOfFrameNumbers] = Correct_Focus_And_Ign
 % will correspond to the frames as they appear in the traces within this 
 % program, and not necessarily in the original data set in FIJI or whatever
 
+        VectorOfFrameNumbers = 1:length(CurrTrace);
+        
 % Ignore frame numbers are simply deleted from the trace, together with their 
 % corresponding values in the time vector
     if strcmp(UniversalData.IgnoreProblems,'y')
-        VectorOfFrameNumbers = 1:length(CurrTrace);
 
         for m=1:length(UniversalData.IgnoreFrameNumbers)
             CurrentIgnoreFrameNumber = UniversalData.IgnoreFrameNumbers(m);
